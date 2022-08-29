@@ -1,0 +1,36 @@
+// Larissa Rodrigues Ferrari | GitHub: larissa-ferrari
+// ATP II - Lista de Exercícios 01 (22/08/2022)
+
+// Questão 4
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main(){
+    char string[500];
+    int i, j;
+
+
+    gets(string);
+    printf("%p", &string[0]);
+    printf("\t");
+
+
+    for(i=0; string[i] != '\0'; i++){
+        printf(" %x", string[i]);
+    }
+
+
+    printf("\t");
+
+
+    for(j=0; string[j] != '\0'; j++){
+        if(!((string[j] >= 0 && string[j] <= 31) || (string[j] == 127))){
+            printf("%c", string[j]);
+        }else{
+            printf(".");
+        }
+    }
+}
