@@ -1,13 +1,15 @@
 // Larissa Rodrigues Ferrari | GitHub: larissa-ferrari
 // ATP II - Lista de Exercícios 01 (22/08/2022)
 
-// Questão 1
+// Questão 1 - itens a), b) e c)
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-// item a) função eh_algarismo 
+
+// item a) função eh_algarismo
+
 
 bool eh_algarismo(char c){
     if(c >= 48 && c <= 57){
@@ -17,7 +19,9 @@ bool eh_algarismo(char c){
     }
 }
 
+
 // item b) funções eh_maiuscula, eh_minuscula, eh_letra
+
 
 bool eh_maiuscula (char c){
     if(c >= 65 && c <= 90){
@@ -27,6 +31,7 @@ bool eh_maiuscula (char c){
     }
 }
 
+
 bool eh_minuscula (char c){
     if(c >= 97 && c <= 122){
         return true;
@@ -35,6 +40,7 @@ bool eh_minuscula (char c){
     }
 }
 
+
 bool eh_letra(char c){
     if(eh_maiuscula(c) || eh_minuscula(c)){
         return true;
@@ -42,6 +48,7 @@ bool eh_letra(char c){
         return false;
     }
 }
+
 
 char minuscula(char c){
     if(!eh_letra(c)){
@@ -53,9 +60,11 @@ char minuscula(char c){
 return c+32;
 }
 
+
 int main(){
     char letter;
     scanf("%c", &letter);
+
 
     if(eh_algarismo(letter)){
         printf("Eh algarismo\n");
@@ -63,11 +72,13 @@ int main(){
         printf("Nao eh algarismo\n");
     }
 
+
     if(eh_maiuscula(letter)){
         printf("Eh maiuscula\n");
     }else{
         printf("Nao eh maiuscula\n");
     }
+
 
     if(eh_minuscula(letter)){
         printf("Eh minuscula\n");
@@ -75,11 +86,13 @@ int main(){
         printf("Nao eh minuscula\n");
     }
 
+
     if(eh_letra(letter)){
         printf("Eh letra\n");
     }else{
         printf("Nao eh letra\n");
     }
+
 
     printf("%c\n", minuscula(letter));
 }
