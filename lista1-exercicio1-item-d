@@ -1,0 +1,23 @@
+// Larissa Rodrigues Ferrari | GitHub: larissa-ferrari
+// ATP II - Lista de Exercícios 01 (22/08/2022)
+
+// Questao 1 -  Item d)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+int main(){
+    char str[] = "A CIA denuncia que a Mafia abastecia o trafico de armas na Bacia do Rio do Prata";
+    int i = 0, aux = 0;
+
+
+    while(str[i] != 0){
+        if((str[i] == 'C' || str[i] == 'c') && (str[i+1] == 'I' || str[i+1] == 'i') && (str[i+2] == 'A' || str[i+2] == 'a')){
+            aux++;
+        }
+        i++;
+    }
+    printf("%d\n", aux);
+}
