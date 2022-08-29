@@ -1,0 +1,59 @@
+// Larissa Rodrigues Ferrari | GitHub: larissa-ferrari
+// ATP II - Lista de Exercícios 01 (22/08/2022)
+
+// Questão 3
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+bool eh_algarismo(char c){
+    if(c >= 48 && c <= 57){
+        return true;
+    }else{
+        return false;
+    }
+}
+   
+int main(){
+    char phone[100];
+    int i = 0, cont = 0;
+    bool eh_valido = true;
+    bool hifen_ponto = false;
+    scanf("%s", phone);
+
+
+    while(phone[cont] != 0){
+        cont++;
+    }
+   
+    if(phone[cont - 5] == '.' || phone[cont - 5] == '-'){
+            hifen_ponto = true;
+    }
+
+
+    if(cont > 9 && (cont != 10 || !hifen_ponto)){
+        eh_valido = false;
+    }
+   
+    if(cont < 9 && (cont != 8 || hifen_ponto)){
+        eh_valido = false;
+    }
+
+
+    while(phone[i] != 0){
+        if(!eh_algarismo(phone[i]) && (i != cont - 5 || !hifen_ponto)){
+            eh_valido = false;
+            break;
+        }
+        i++;
+    }
+    if(eh_valido){
+        printf("Eh valido\n");
+    }else{
+        printf("Nao eh valido\n");
+    }
+
+
+}
