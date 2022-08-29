@@ -1,0 +1,46 @@
+// Larissa Rodrigues Ferrari | GitHub: larissa-ferrari
+// ATP II - Lista de Exercícios 01 (22/08/2022)
+
+// Questão 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+int main(){
+    char str[] = "Ola, USUARIO, atualize a senha e o nome do do seu usuario";
+    char str2[] = "";
+    int i = 0, aux = 0;
+
+
+    while(str[i] != 0){
+        if(str[i] == 'U' && str[i+1] == 'S' && str[i+2] == 'U' && str[i+3] == 'A' && str[i+4] == 'R' && str[i+5] == 'I' && str[i+6] == 'O'){
+            str2[aux] = 'P';
+            str2[aux + 1] = 'a';
+            str2[aux + 2] = 't';
+            str2[aux + 3] = 'r';
+            str2[aux + 4] = 'i';
+            str2[aux + 5] = 'c';
+            str2[aux + 6] = 'i';
+            str2[aux + 7] = 'a';
+
+
+            aux = aux + 8;
+            i = i + 7;
+
+
+        }else{
+            str2[aux] = str[i];
+            aux++;
+            i++;
+        }
+    }
+    str2[aux] = 0;
+    i=0;
+    while(str2[i]!=0){
+        printf("%c", str2[i]);
+        i++;
+    }
+    printf("\n");  
+}
